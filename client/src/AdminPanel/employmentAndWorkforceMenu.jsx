@@ -95,11 +95,7 @@ function EmploymentAndWorkForceMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -225,9 +221,7 @@ function EmploymentAndWorkForceMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -254,9 +248,7 @@ function EmploymentAndWorkForceMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -346,9 +338,7 @@ function EmploymentAndWorkForceMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -367,9 +357,7 @@ function EmploymentAndWorkForceMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_total_employment_status`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_total_employment_status`,
             requestData,
             (data) => {
                 setEmploymentAndWorkforce(data);
@@ -378,8 +366,8 @@ function EmploymentAndWorkForceMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
+            `${
+                import.meta.env.VITE_WEBSITE_URL
             }/get_last_year_total_employment_status`,
             requestData,
             (data) => {
@@ -435,9 +423,7 @@ function EmploymentAndWorkForceMenu() {
         if (selector === "Employment Status") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_employment_status`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_employment_status`,
                     requestData
                 )
                 .then(processBarChartData)
@@ -445,9 +431,7 @@ function EmploymentAndWorkForceMenu() {
         } else if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_employment_sex`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_employment_sex`,
                     requestData
                 )
                 .then(processBarChartData)
@@ -455,9 +439,7 @@ function EmploymentAndWorkForceMenu() {
         } else if (selector === "Job Positions") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_jobs`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_jobs`,
                     requestData
                 )
                 .then((response) => {
@@ -518,8 +500,8 @@ function EmploymentAndWorkForceMenu() {
 
         //this api fetches the last year total data
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
+            `${
+                import.meta.env.VITE_WEBSITE_URL
             }/get_last_year_arrivals_by_area`,
             requestData,
             (data) => {
@@ -575,8 +557,8 @@ function EmploymentAndWorkForceMenu() {
         if (selector === "Employment Status") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_employment_status_by_area`,
                     requestData
                 )
@@ -585,8 +567,8 @@ function EmploymentAndWorkForceMenu() {
         } else if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_employment_sex_by_area`,
                     requestData
                 )
@@ -595,9 +577,7 @@ function EmploymentAndWorkForceMenu() {
         } else if (selector === "Job Positions") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_jobs_by_area`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_jobs_by_area`,
                     requestData
                 )
                 .then((response) => {

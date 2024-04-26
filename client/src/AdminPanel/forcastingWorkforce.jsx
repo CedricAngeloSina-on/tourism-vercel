@@ -84,11 +84,7 @@ function ForcastWorkforceMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -177,11 +173,7 @@ function ForcastWorkforceMenu() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_job_titles`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/get_job_titles`)
             .then((response) => {
                 console.log("JOB ROLES: ", response.data);
                 setJobTitles(response.data);
@@ -230,9 +222,7 @@ function ForcastWorkforceMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -260,9 +250,7 @@ function ForcastWorkforceMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -352,9 +340,7 @@ function ForcastWorkforceMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -373,9 +359,7 @@ function ForcastWorkforceMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos`,
             requestData,
             (data) => {
                 setALOS(Number(data).toFixed(2));
@@ -384,9 +368,7 @@ function ForcastWorkforceMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_alos`,
             requestData,
             (data) => {
                 setLastYearALOS(Number(data).toFixed(2));
@@ -474,9 +456,7 @@ function ForcastWorkforceMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_forecasting_jobs`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_forecasting_jobs`,
                     requestData
                 )
                 .then((response) => {
@@ -589,9 +569,7 @@ function ForcastWorkforceMenu() {
 
         // DANIEL HERE
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos_by_area`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos_by_area`,
             requestData,
             (data) => {
                 setSpecificALOS(Number(data).toFixed(2));
@@ -643,8 +621,8 @@ function ForcastWorkforceMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_jobs_by_area`,
                     requestData
                 )

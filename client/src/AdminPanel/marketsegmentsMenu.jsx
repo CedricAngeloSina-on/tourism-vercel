@@ -69,11 +69,7 @@ function SexMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -170,9 +166,7 @@ function SexMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -197,9 +191,7 @@ function SexMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -301,9 +293,7 @@ function SexMenu() {
         if (selector === "Age Group") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_ages_overall`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_ages_overall`,
                     requestData
                 )
                 .then((response) => {
@@ -314,8 +304,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_ages_overall_by_month`,
                     requestData
                 )
@@ -328,9 +318,7 @@ function SexMenu() {
         } else if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_sex_overall`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_sex_overall`,
                     requestData
                 )
                 .then((response) => {
@@ -341,8 +329,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_sex_overall_by_month`,
                     requestData
                 )
@@ -355,9 +343,7 @@ function SexMenu() {
         } else if (selector === "Domestic Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_local`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_local`,
                     requestData
                 )
                 .then((response) => {
@@ -394,9 +380,7 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_local_by_month`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_local_by_month`,
                     requestData
                 )
                 .then((response) => {
@@ -436,9 +420,7 @@ function SexMenu() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_foreign`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_foreign`,
                     requestData
                 )
                 .then((response) => {
@@ -499,9 +481,7 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_foreign_by_month`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_foreign_by_month`,
                     requestData
                 )
                 .then((response) => {
@@ -574,8 +554,8 @@ function SexMenu() {
         if (selector === "Age Group") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_ages_overall_by_area`,
                     requestData
                 )
@@ -590,8 +570,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_ages_overall_by_area_by_month`,
                     requestData
                 )
@@ -606,8 +586,8 @@ function SexMenu() {
         } else if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_sex_overall_by_area`,
                     requestData
                 )
@@ -622,8 +602,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_sex_overall_by_area_by_month`,
                     requestData
                 )
@@ -638,9 +618,7 @@ function SexMenu() {
         } else if (selector === "Domestic Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_local_by_area`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_local_by_area`,
                     requestData
                 )
                 .then((response) => {
@@ -677,8 +655,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_local_by_area_by_month`,
                     requestData
                 )
@@ -717,9 +695,7 @@ function SexMenu() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_foreign_by_area`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_foreign_by_area`,
                     requestData
                 )
                 .then((response) => {
@@ -779,8 +755,8 @@ function SexMenu() {
                 .catch((error) => console.error("Error:", error));
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_foreign_by_area_by_month`,
                     requestData
                 )

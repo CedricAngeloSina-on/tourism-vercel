@@ -74,11 +74,7 @@ function GuimarasMap() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -157,9 +153,7 @@ function GuimarasMap() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -184,9 +178,7 @@ function GuimarasMap() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -261,9 +253,7 @@ function GuimarasMap() {
         if (selector === "Average Length of Stay") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_alos_heatmap`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_alos_heatmap`,
                     requestData
                 )
                 .then((response) => {
@@ -275,8 +265,8 @@ function GuimarasMap() {
         } else if (selector === "Occupancy Rate") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_heatmap`,
                     requestData
                 )
@@ -300,8 +290,8 @@ function GuimarasMap() {
         if (selector === "Average Length of Stay") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_heatmap_by_area`,
                     requestData
                 )
@@ -314,8 +304,8 @@ function GuimarasMap() {
         } else if (selector === "Occupancy Rate") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_by_area`,
                     requestData
                 )

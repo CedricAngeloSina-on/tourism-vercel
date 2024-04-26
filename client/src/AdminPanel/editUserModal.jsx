@@ -23,9 +23,7 @@ function EditUser(props) {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_user_by_id`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_user_by_id`,
                 requestData
             )
             .then((response) => {
@@ -53,9 +51,7 @@ function EditUser(props) {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/update_user_by_id`,
+                `${import.meta.env.VITE_WEBSITE_URL}/update_user_by_id`,
                 requestData
             )
             .then((response) => {

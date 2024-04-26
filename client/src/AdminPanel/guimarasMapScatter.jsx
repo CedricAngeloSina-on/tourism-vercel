@@ -81,11 +81,7 @@ function GuimarasMap() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -164,9 +160,7 @@ function GuimarasMap() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -191,9 +185,7 @@ function GuimarasMap() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -268,9 +260,7 @@ function GuimarasMap() {
         if (selector === "Local Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_local_scatterplot`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_local_scatterplot`,
                     requestData
                 )
                 .then((response) => {
@@ -298,8 +288,8 @@ function GuimarasMap() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_foreign_scatterplot`,
                     requestData
                 )
@@ -365,8 +355,8 @@ function GuimarasMap() {
         if (selector === "Local Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_local_scatterplot_by_area`,
                     requestData
                 )
@@ -379,8 +369,8 @@ function GuimarasMap() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_foreign_scatterplot_by_area`,
                     requestData
                 )

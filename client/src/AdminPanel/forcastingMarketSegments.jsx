@@ -86,11 +86,7 @@ function ForcastMarketSegmentsMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -179,11 +175,7 @@ function ForcastMarketSegmentsMenu() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_job_titles`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/get_job_titles`)
             .then((response) => {
                 console.log("JOB ROLES: ", response.data);
                 setJobTitles(response.data);
@@ -232,9 +224,7 @@ function ForcastMarketSegmentsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -262,9 +252,7 @@ function ForcastMarketSegmentsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -354,9 +342,7 @@ function ForcastMarketSegmentsMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -375,9 +361,7 @@ function ForcastMarketSegmentsMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos`,
             requestData,
             (data) => {
                 setALOS(Number(data).toFixed(2));
@@ -386,9 +370,7 @@ function ForcastMarketSegmentsMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_alos`,
             requestData,
             (data) => {
                 setLastYearALOS(Number(data).toFixed(2));
@@ -474,9 +456,7 @@ function ForcastMarketSegmentsMenu() {
         if (selector === "Age Group") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_forecasting_ages`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_forecasting_ages`,
                     requestData
                 )
                 .then((response) => {
@@ -501,9 +481,7 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector == "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_forecasting_sex`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_forecasting_sex`,
                     requestData
                 )
                 .then((response) => {
@@ -528,9 +506,7 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector == "Domestic Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/get_forecasting_local`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/get_forecasting_local`,
                     requestData
                 )
                 .then((response) => {
@@ -557,8 +533,8 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_foreign`,
                     requestData
                 )
@@ -693,9 +669,7 @@ function ForcastMarketSegmentsMenu() {
 
         // DANIEL HERE
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos_by_area`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos_by_area`,
             requestData,
             (data) => {
                 setSpecificALOS(Number(data).toFixed(2));
@@ -747,8 +721,8 @@ function ForcastMarketSegmentsMenu() {
         if (selector === "Age Group") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_ages_by_area`,
                     requestData
                 )
@@ -775,8 +749,8 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector == "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_sex_by_area`,
                     requestData
                 )
@@ -803,8 +777,8 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector == "Domestic Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_local_by_area`,
                     requestData
                 )
@@ -831,8 +805,8 @@ function ForcastMarketSegmentsMenu() {
         } else if (selector === "Foreign Tourists") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_forecasting_foreign_by_area`,
                     requestData
                 )
