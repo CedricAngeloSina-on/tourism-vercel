@@ -35,11 +35,7 @@ function LoginUI() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 console.log(response);
                 if (response.data.loggedIn == true) {
@@ -99,9 +95,7 @@ function LoginUI() {
 
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/login`,
+                `${import.meta.env.VITE_WEBSITE_URL}/login`,
                 {
                     username: username,
                     password: password,

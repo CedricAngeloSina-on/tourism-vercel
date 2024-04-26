@@ -84,11 +84,7 @@ function EAform() {
     // ALso add roleIdentity, because I can access tabs meant only for munic and province accounts
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -127,9 +123,7 @@ function EAform() {
         };
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_dashboard_name`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
                 requestData
             )
             .then((response) => {
@@ -267,9 +261,7 @@ function EAform() {
             ) {
                 try {
                     const response = await axios.post(
-                        `${import.meta.env.VITE_WEBSITE_URL}:${
-                            import.meta.env.VITE_PORT
-                        }/create_entry`,
+                        `${import.meta.env.VITE_WEBSITE_URL}/create_entry`,
                         {
                             date: dateStr,
                             establishmentID: establishment,
@@ -293,8 +285,8 @@ function EAform() {
                     );
 
                     const response2 = await axios.post(
-                        `${import.meta.env.VITE_WEBSITE_URL}:${
-                            import.meta.env.VITE_PORT
+                        `${
+                            import.meta.env.VITE_WEBSITE_URL
                         }/create_market_segments_entry`,
                         {
                             date: dateStr,
