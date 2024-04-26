@@ -227,7 +227,6 @@ const port = process.env.VITE_PORT || 3000;
 
 app.use("/", (req, res) => {
     res.send("Hello World!");
-    res.send(`Server is running on port ${port}`);
 });
 
 app.listen(port, () => {
