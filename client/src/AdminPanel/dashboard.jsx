@@ -118,11 +118,7 @@ function Dashboard() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -201,9 +197,7 @@ function Dashboard() {
         };
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_dashboard_name`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
                 requestData
             )
             .then((response) => {
@@ -227,9 +221,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_arrivals`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_arrivals`,
                 requestData
             )
             .then((response) => {
@@ -243,9 +235,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_domestic_arrivals`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_domestic_arrivals`,
                 requestData
             )
             .then((response) => {
@@ -260,9 +250,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_foreign_arrivals`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_foreign_arrivals`,
                 requestData
             )
             .then((response) => {
@@ -277,9 +265,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_overnights`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_overnights`,
                 requestData
             )
             .then((response) => {
@@ -294,9 +280,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_domestic_overnights`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_domestic_overnights`,
                 requestData
             )
             .then((response) => {
@@ -311,9 +295,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_foreign_overnights`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_foreign_overnights`,
                 requestData
             )
             .then((response) => {
@@ -328,8 +310,8 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
+                `${
+                    import.meta.env.VITE_WEBSITE_URL
                 }/get_arrivals_by_establishment`,
                 requestData
             )
@@ -349,8 +331,8 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
+                `${
+                    import.meta.env.VITE_WEBSITE_URL
                 }/get_overnights_by_establishment`,
                 requestData
             )
@@ -369,9 +351,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_arrivals_by_AE`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_arrivals_by_AE`,
                 requestData
             )
             .then((response) => {
@@ -389,9 +369,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_overnights_by_AE`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_overnights_by_AE`,
                 requestData
             )
             .then((response) => {
@@ -418,9 +396,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_arrivals_barchart`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_arrivals_barchart`,
                 requestData
             )
             .then((response) => {
@@ -439,9 +415,7 @@ function Dashboard() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_overnights_barchart`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_overnights_barchart`,
                 requestData
             )
             .then((response) => {

@@ -81,11 +81,7 @@ function LengthOfStayMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -209,9 +205,7 @@ function LengthOfStayMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -239,9 +233,7 @@ function LengthOfStayMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -331,9 +323,7 @@ function LengthOfStayMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -352,9 +342,7 @@ function LengthOfStayMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos`,
             requestData,
             (data) => {
                 setALOS(Number(data).toFixed(2));
@@ -363,9 +351,7 @@ function LengthOfStayMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_alos`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_alos`,
             requestData,
             (data) => {
                 setLastYearALOS(Number(data).toFixed(2));
@@ -418,8 +404,8 @@ function LengthOfStayMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_overall_barchart`,
                     requestData
                 )
@@ -428,8 +414,8 @@ function LengthOfStayMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_origin_barchart`,
                     requestData
                 )
@@ -438,8 +424,8 @@ function LengthOfStayMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_aetypes_barchart`,
                     requestData
                 )
@@ -501,9 +487,7 @@ function LengthOfStayMenu() {
 
         //this api fetches the last year total data
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_alos_by_area`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_alos_by_area`,
             requestData,
             (data) => {
                 setSpecificLastYearALOS(Number(data).toFixed(2));
@@ -512,9 +496,7 @@ function LengthOfStayMenu() {
 
         // DANIEL HERE
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_alos_by_area`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_alos_by_area`,
             requestData,
             (data) => {
                 setSpecificALOS(Number(data).toFixed(2));
@@ -566,8 +548,8 @@ function LengthOfStayMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_overall_by_area_barchart`,
                     requestData
                 )
@@ -576,8 +558,8 @@ function LengthOfStayMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_origin_by_area_barchart`,
                     requestData
                 )
@@ -586,8 +568,8 @@ function LengthOfStayMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_alos_by_aetypes_by_area_barchart`,
                     requestData
                 )

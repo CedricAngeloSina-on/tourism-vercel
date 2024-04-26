@@ -92,11 +92,7 @@ function CreateAccount() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -134,9 +130,7 @@ function CreateAccount() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -162,9 +156,7 @@ function CreateAccount() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -222,8 +214,8 @@ function CreateAccount() {
                         }
 
                         const response = await axios.post(
-                            `${import.meta.env.VITE_WEBSITE_URL}:${
-                                import.meta.env.VITE_PORT
+                            `${
+                                import.meta.env.VITE_WEBSITE_URL
                             }/create_account`,
                             {
                                 email: email,

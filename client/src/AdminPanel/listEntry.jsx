@@ -67,11 +67,7 @@ function ListEntry() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -109,9 +105,7 @@ function ListEntry() {
         };
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_entries`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_entries`,
                 requestData
             )
             .then((response) => {

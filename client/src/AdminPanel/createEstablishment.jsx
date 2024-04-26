@@ -88,11 +88,7 @@ function CreateEstablishment() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -122,11 +118,7 @@ function CreateEstablishment() {
             });
 
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_aetypes`
-            ) // Replace with the actual URL of your backend API
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/get_aetypes`) // Replace with the actual URL of your backend API
             .then((response) => {
                 console.log(response.data);
                 setAEArray(response.data);
@@ -140,9 +132,7 @@ function CreateEstablishment() {
         if (establishment !== "") {
             try {
                 const response = await axios.post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/create_establishment`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/create_establishment`,
                     {
                         establishmentName: establishment,
                         municipalityID: municipalityID,

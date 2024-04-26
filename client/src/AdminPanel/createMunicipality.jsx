@@ -63,11 +63,7 @@ function CreateMunicipality() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -101,9 +97,7 @@ function CreateMunicipality() {
         if (municipality !== "") {
             try {
                 const response = await axios.post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
-                    }/create_municipality`,
+                    `${import.meta.env.VITE_WEBSITE_URL}/create_municipality`,
                     {
                         municipalityName: municipality,
                         provinceID: provinceID,

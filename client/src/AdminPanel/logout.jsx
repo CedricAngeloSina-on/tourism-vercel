@@ -12,9 +12,7 @@ function Logout() {
     async function logout() {
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/logout`
+                `${import.meta.env.VITE_WEBSITE_URL}/logout`
             );
             // If the login is successful, you can console.log the response.
             navigate("/home/login");

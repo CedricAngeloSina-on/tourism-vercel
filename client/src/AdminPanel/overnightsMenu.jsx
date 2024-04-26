@@ -83,11 +83,7 @@ function OvernightsMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -211,9 +207,7 @@ function OvernightsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -241,9 +235,7 @@ function OvernightsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -333,9 +325,7 @@ function OvernightsMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -354,9 +344,7 @@ function OvernightsMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_overnights`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_overnights`,
             requestData,
             (data) => {
                 setOvernights(data);
@@ -365,9 +353,7 @@ function OvernightsMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_overnights`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_overnights`,
             requestData,
             (data) => {
                 setLastYearOvernights(data);
@@ -420,8 +406,8 @@ function OvernightsMenu() {
         if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_sex_barchart`,
                     requestData
                 )
@@ -430,8 +416,8 @@ function OvernightsMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_origin_barchart`,
                     requestData
                 )
@@ -440,8 +426,8 @@ function OvernightsMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_aetypes_barchart`,
                     requestData
                 )
@@ -460,8 +446,8 @@ function OvernightsMenu() {
 
         //this api fetches the last year total data
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
+            `${
+                import.meta.env.VITE_WEBSITE_URL
             }/get_last_year_overnights_by_area`,
             requestData,
             (data) => {
@@ -516,8 +502,8 @@ function OvernightsMenu() {
         if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_sex_by_area_barchart`,
                     requestData
                 )
@@ -526,8 +512,8 @@ function OvernightsMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_origin_by_area_barchart`,
                     requestData
                 )
@@ -536,8 +522,8 @@ function OvernightsMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_overnights_by_aetypes_by_area_barchart`,
                     requestData
                 )

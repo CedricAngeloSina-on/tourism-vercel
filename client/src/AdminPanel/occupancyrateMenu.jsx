@@ -82,11 +82,7 @@ function OccupancyRateMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -210,9 +206,7 @@ function OccupancyRateMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -240,9 +234,7 @@ function OccupancyRateMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -332,9 +324,7 @@ function OccupancyRateMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -353,9 +343,7 @@ function OccupancyRateMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_occupancy_rate`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_occupancy_rate`,
             requestData,
             (data) => {
                 setOR(Number(data).toFixed(2));
@@ -364,9 +352,7 @@ function OccupancyRateMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_occupancy_rate`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_occupancy_rate`,
             requestData,
             (data) => {
                 setLastYearOR(Number(data).toFixed(2));
@@ -419,8 +405,8 @@ function OccupancyRateMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_by_overall_barchart`,
                     requestData
                 )
@@ -429,8 +415,8 @@ function OccupancyRateMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_by_aetypes_barchart`,
                     requestData
                 )
@@ -492,8 +478,8 @@ function OccupancyRateMenu() {
 
         //this api fetches the last year total data
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
+            `${
+                import.meta.env.VITE_WEBSITE_URL
             }/get_last_year_occupancy_rate_by_area`,
             requestData,
             (data) => {
@@ -555,8 +541,8 @@ function OccupancyRateMenu() {
         if (selector === "Overall") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_by_overall_by_area_barchart`,
                     requestData
                 )
@@ -565,8 +551,8 @@ function OccupancyRateMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_occupancy_rate_by_aetypes_by_area_barchart`,
                     requestData
                 )

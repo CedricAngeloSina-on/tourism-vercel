@@ -84,11 +84,7 @@ function WorkforceForm() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -122,11 +118,7 @@ function WorkforceForm() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_job_titles`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/get_job_titles`)
             .then((response) => {
                 console.log("JOB ROLES: ", response.data);
                 setJobTitles(response.data);
@@ -144,9 +136,7 @@ function WorkforceForm() {
         };
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_dashboard_name`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
                 requestData
             )
             .then((response) => {
@@ -240,8 +230,8 @@ function WorkforceForm() {
             if (employementDataStatus == true && jobTitleStatus == true) {
                 try {
                     const response = await axios.post(
-                        `${import.meta.env.VITE_WEBSITE_URL}:${
-                            import.meta.env.VITE_PORT
+                        `${
+                            import.meta.env.VITE_WEBSITE_URL
                         }/create_workforce_entry`,
                         {
                             date: dateStr,

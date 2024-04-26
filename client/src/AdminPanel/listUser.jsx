@@ -30,11 +30,7 @@ function ListUser() {
 
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
 
@@ -80,12 +76,7 @@ function ListUser() {
         };
 
         axios
-            .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_users`,
-                requestData
-            )
+            .post(`${import.meta.env.VITE_WEBSITE_URL}/get_users`, requestData)
             .then((response) => {
                 console.log("Response:", response.data);
                 setUserArray(response.data);
@@ -105,9 +96,7 @@ function ListUser() {
 
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/set_user_status`,
+                `${import.meta.env.VITE_WEBSITE_URL}/set_user_status`,
                 requestData
             );
             console.log("Response:", response.data);
