@@ -219,7 +219,6 @@ app.post("/logout", (req, res) => {
         cookies.forEach((cookieName) => {
             res.clearCookie(cookieName);
         });
-
         res.status(200).json({ message: "Logout successful" });
     });
 });
