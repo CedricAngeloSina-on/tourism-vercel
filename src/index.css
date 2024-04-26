@@ -1,0 +1,150 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+html,
+body,
+#root,
+.App {
+	height: 100%;
+}
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.wave-container {
+	height: 40vh;
+	background-color: #000000;
+	position: relative;
+}
+
+.wave-container::after {
+	content: "";
+	width: 100%;
+	height: 168px;
+	position: absolute;
+	bottom: -0.3%;
+	left: 0;
+	background-size: auto;
+	background-repeat: repeat no-repeat;
+	background-position: 85vw bottom;
+	z-index: 1;
+	background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 95' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0 69L50 65C100 61 200 52 300 35C400 18 500 -7 600 1C700 10 800 52 900 69C1000 86 1100 78 1150 74L1200 69V95H1150C1100 95 1000 95 900 95C800 95 700 95 600 95C500 95 400 95 300 95C200 95 100 95 50 95H0V69Z' fill='%23ffffff'/></svg>");
+}
+
+@media (max-width: 850px) {
+	.wave-container::after {
+		height: 84px;
+	}
+}
+
+.custom-shape-divider-top-1698135892 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.custom-shape-divider-top-1698135892 svg {
+	position: relative;
+	display: block;
+	width: calc(175% + 1.3px);
+	height: 100px;
+	transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1698135892 .shape-fill {
+	fill: #ffffff;
+}
+
+#svg path {
+	stroke: #ffffff;
+	stroke-width: 10px;
+}
+
+.custom-shape-divider-bottom-1698137052 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1698137052 svg {
+	position: relative;
+	display: block;
+	width: calc(125% + 1.3px);
+	height: 75px;
+	transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1698137052 .shape-fill {
+	fill: #ffffff;
+}
+
+.custom-shape-divider-bottom-1698229550 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1698229550 svg {
+	position: relative;
+	display: block;
+	width: calc(141% + 1.3px);
+	height: 100px;
+	transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1698229550 .shape-fill {
+	fill: #008181;
+}
+
+.municipality {
+	fill: #19242e;
+	stroke: #50c878; /* Border color */
+	stroke-width: 3px; /* Border width */
+	transition: fill 0.5s ease-in-out;
+}
+
+.highlighted {
+	fill: #0044aa;
+}
+
+#Buenavista:hover {
+	fill: #0044aa;
+}
+
+#Jordan:hover {
+	fill: #ff5733;
+}
+
+#Nueva_Valencia:hover {
+	fill: #44a047;
+}
+
+#San_Lorenzo:hover {
+	fill: #9c27b0;
+}
