@@ -81,11 +81,7 @@ function ArrivalsMenu() {
     //Fetching data for graphs on first render of page
     useEffect(() => {
         axios
-            .get(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/check-login`
-            )
+            .get(`${import.meta.env.VITE_WEBSITE_URL}/check-login`)
             .then((response) => {
                 const { userID } = response.data;
                 setUserData(userID);
@@ -211,9 +207,7 @@ function ArrivalsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_municipalities`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_municipalities`,
                 requestData
             )
             .then((response) => {
@@ -240,9 +234,7 @@ function ArrivalsMenu() {
 
         axios
             .post(
-                `${import.meta.env.VITE_WEBSITE_URL}:${
-                    import.meta.env.VITE_PORT
-                }/get_establishments`,
+                `${import.meta.env.VITE_WEBSITE_URL}/get_establishments`,
                 requestData
             )
             .then((response) => {
@@ -332,9 +324,7 @@ function ArrivalsMenu() {
         };
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_dashboard_name`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_dashboard_name`,
             requestData,
             (data) => {
                 setDashboardName(data.toLocaleString());
@@ -353,9 +343,7 @@ function ArrivalsMenu() {
         console.log(requestData);
 
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_arrivals`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_arrivals`,
             requestData,
             (data) => {
                 setArrivals(data);
@@ -364,9 +352,7 @@ function ArrivalsMenu() {
 
         //this is for last year
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
-            }/get_last_year_arrivals`,
+            `${import.meta.env.VITE_WEBSITE_URL}/get_last_year_arrivals`,
             requestData,
             (data) => {
                 setLastYearArrivals(data);
@@ -419,8 +405,8 @@ function ArrivalsMenu() {
         if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_sex_barchart`,
                     requestData
                 )
@@ -429,8 +415,8 @@ function ArrivalsMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_origin_barchart`,
                     requestData
                 )
@@ -439,8 +425,8 @@ function ArrivalsMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_aetypes_barchart`,
                     requestData
                 )
@@ -459,8 +445,8 @@ function ArrivalsMenu() {
 
         //this api fetches the last year total data
         fetchData(
-            `${import.meta.env.VITE_WEBSITE_URL}:${
-                import.meta.env.VITE_PORT
+            `${
+                import.meta.env.VITE_WEBSITE_URL
             }/get_last_year_arrivals_by_area`,
             requestData,
             (data) => {
@@ -516,8 +502,8 @@ function ArrivalsMenu() {
         if (selector === "Sex") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_sex_by_area_barchart`,
                     requestData
                 )
@@ -526,8 +512,8 @@ function ArrivalsMenu() {
         } else if (selector === "Origin") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_origin_by_area_barchart`,
                     requestData
                 )
@@ -536,8 +522,8 @@ function ArrivalsMenu() {
         } else if (selector === "Establishment Type") {
             axios
                 .post(
-                    `${import.meta.env.VITE_WEBSITE_URL}:${
-                        import.meta.env.VITE_PORT
+                    `${
+                        import.meta.env.VITE_WEBSITE_URL
                     }/get_arrivals_by_aetypes_by_area_barchart`,
                     requestData
                 )
