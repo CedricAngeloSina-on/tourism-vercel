@@ -225,9 +225,8 @@ app.post("/logout", (req, res) => {
 
 const port = process.env.VITE_PORT || 3000;
 
-app.use("/", (port, res) => {
+app.use("/", (req, res) => {
     res.send("Hello World!");
-    console.log(`Server is running on port ${port}`);
 });
 
 app.listen(port, () => {
