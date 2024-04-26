@@ -233,7 +233,7 @@ function AdminUI() {
                     }
                 } else {
                     console.log("User ID not found in the response.");
-                    navigate("/home/login");
+                    //  navigate("/home/login");
                 }
             })
             .catch((error) => {
